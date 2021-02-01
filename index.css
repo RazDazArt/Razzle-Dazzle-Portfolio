@@ -189,12 +189,12 @@ section .title::after{
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: crimson;
+    color: Plum;
     font-weight: 500;
 }
 .home .home-content a{
     display: inline-block;
-    background: crimson;
+    background: Plum;
     color: #fff;
     font-size: 25px;
     padding: 12px 36px;
