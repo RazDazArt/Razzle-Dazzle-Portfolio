@@ -165,7 +165,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("https://media.discordapp.net/attachments/750112694337536190/803861695097077760/IMG_20210109_131601635.jpg") no-repeat center;
+    background: url("https://media.discordapp.net/attachments/893363034448330762/1166084180959039538/image.png?ex=65493385&is=6536be85&hm=285e0c467e4cc01543bbebcd8219889b0bbb464ffea20a01d2882f26e9288a59&=") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
