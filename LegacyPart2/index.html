@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script language="Javascript" src="stock_data.js"></script>
+    <script language="Javascript" src="projects.js"></script>
+
+
+    <title>Fawaz's Portfolio</title>
+</head>
+<body>
+    <!-- <div class="nav-dropdown">
+        <img class="menu-icon" src="images/hamburgerIcon.png" onclick="openMenu()">
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="demo.html">Demos</a>
+            <a href="social.html">Socials</a>
+            <a href="mujtaba_resume.pdf">Resume</a>
+            
+            
+            
+        </div>
+    </div> -->
+
+
+    
+    <div class="nav-bar">
+
+        <h1 onclick="location.href='index.html';">Fawaz Mujtaba</h1>
+        <!-- <marquee id="my-ticker" behavior="scroll" direction="left" scrollamount="10"></marquee> -->
+        <div class="hyperlinks" style="width:20%; display: inline;">
+            <a href="projects.html">Projects</a>
+            <a href="mujtaba_resume_tesla_ai.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+        <div style="color: white; width: 20%; float: left; margin-top: 20px;">
+            Site rebuild in progress... There may be bugs
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/fawaz.strawberry/"target="_blank" rel="noopener noreferrer"><img style="width: 20px; height: 20px;" src="images/ig_logo.png"></a>
+            <a href="https://twitter.com/Fawaz_Strawbery/" target="_blank" rel="noopener noreferrer"><img style="width: 20px; height: 20px;" src="images/twitter_logo.png"></a>
+            <a href="https://www.youtube.com/channel/UChlh33Dta72VAta7l3Q9kCA" target="_blank" rel="noopener noreferrer"><img style="width: 30px; height: 20px;" src="images/youtube_logo.png"></a>
+        </div>
+        
+        
+        
+    </div>
+
+
+    <div class="Description-Home">
+        <h2>AI, Game Dev, and Robots</h2>
+    </div>
+    <div class="VideoGame">
+        <video id="vidScreen" width="1000" height="545" autoplay loop controls>
+            <source src="pongAI.mp4" type="video/mp4">
+        </video>
+        <!-- <canvas id="gameScreen" width="900" height="500"></canvas> -->
+    </div>
+    <div class="Description-Home">
+        <p>I'm capable and determined with skills ranging from AI, Neural Networks, and Data Science
+            to Computer Graphics, Game Development, and 3D Modeling.
+        </p>
+        <button onclick="location.href='projects.html'">View Projects</button>
+    </div>
+    <br>
+
+    <hr>
+
+    <div class="Current">
+        <h2>Valorant Gun Controller</h2>
+        <p>A new controller for Valorant allowing the user
+            to aim more naturally and use their fully body's movements as input to the game.
+        </p>
+    </div>
+    <div class="Current-Image">
+        <iframe width="896" height="504" src="https://www.youtube.com/embed/C3Lo0oJPQvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+
+    <div class="Footer">
+        Thanks for Visiting
+        <br>
+        Last Update: 8/29/2021
+
+    </div>
+
+    <!-- <iframe src="https://i.simmer.io/@BubbleMagic45/cider-truck" style="width:960px;height:600px"></iframe>
+    <iframe src="https://i.simmer.io/@BubbleMagic45/racingai" style="width:960px;height:600px"></iframe>
+    <iframe src="https://i.simmer.io/@BubbleMagic45/breakout" style="width:960px;height:600px"></iframe> -->
+</body>
+</html>
+
+<script>
+
+//Game Stuffffffffffffff
+
+//     myCanvas = document.getElementById("gameScreen")
+//     ctx = myCanvas.getContext("2d");
+
+//     ballX = 20;
+//     ballY = 20;
+//     ballDx = 1;
+//     ballDy = 1;
+//     ballRadius = 15;
+
+
+//     playerHeight = 10;
+//     playerWidth = 80;
+//     playerX = myCanvas.width / 2 - playerWidth/ 2;
+//     playerY = myCanvas.height - playerHeight - 5;
+//     playerDx = 0;
+//     playerDy = 0;
+//     playerSpeed = 3;
+
+//     rightPressed = false;
+//     leftPressed = false;
+
+//     function drawBall()
+//     {
+//         ctx.beginPath();
+//         ctx.arc(ballX, ballY, 15, 0, Math.PI*2);
+//         ctx.fillStyle = "#0095DD";
+//         ctx.fill();
+//         ctx.closePath();
+
+//         ballX += ballDx;
+//         ballY += ballDy;
+
+//         if(ballX + ballRadius + ballDx >= myCanvas.width || ballX - ballRadius + ballDx <= 0)
+//         {
+//             ballDx *= -1;
+//             ballDx *= (1 + .1 * Math.random())
+//         }
+
+//         if(ballY >= myCanvas.height)
+//         {
+//             ballX = Math.random()*(myCanvas.width - 40) + 20
+//             ballY = 20
+//             ballDx = (Math.random() * 2) + 1
+//             ballDy = (Math.random() * 2) + 1
+//         }
+//         else if((ballY + ballRadius + ballDy >= myCanvas.height - playerHeight && ballX < playerX + playerWidth && ballX > playerX) || ballY - ballRadius + ballDy <= 0)
+//         {
+//             ballDy *= -1;
+//             ballDy *= (1 + .1 * Math.random())
+
+//             if(ballY + ballRadius + ballDy >= myCanvas.height - playerHeight)
+//             {
+//                 ballY = myCanvas.height - playerHeight
+//             }
+//         }
+
+
+
+
+//         // console.log("BallX: " + ballX)
+//         // console.log("BallY: " + ballY)
+//     }
+
+//     function drawPlayer()
+//     {
+//         ctx.beginPath();
+//         ctx.rect(playerX, playerY,  playerWidth, playerHeight);
+//         ctx.fillStyle = "#0095DD";
+//         ctx.fill();
+//         ctx.closePath();
+        
+//         if(rightPressed)
+//         {
+//             playerDx = playerSpeed
+//         }
+//         else if(leftPressed)
+//         {
+//             playerDx = playerSpeed * -1
+//         }
+//         else
+//         {
+//             playerDx = 0
+//         }
+
+//         if(playerX + playerWidth + playerDx < myCanvas.width && playerX + playerDx >= 0)
+//         {
+//             playerX += playerDx
+//         }
+//     }
+
+//     function draw()
+//     {
+//         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+//         drawBall()
+//         drawPlayer()
+//     }
+//     setInterval(draw, 10);
+
+// function keyDownHandler(e)
+// {
+//     if(e.key == "Right" || e.key == "ArrowRight")
+//     {
+//         rightPressed = true;
+//     }
+//     else if(e.key == "Left" || e.key == "ArrowLeft")
+//     {
+//         leftPressed = true;
+//     }
+// }
+
+// function keyUpHandler(e)
+// {
+//     if(e.key == "Right" || e.key == "ArrowRight")
+//     {
+//         rightPressed = false;
+//     }
+//     else if(e.key == "Left" || e.key == "ArrowLeft")
+//     {
+//         leftPressed = false;
+//     }
+// }
+
+//     document.addEventListener("keydown", keyDownHandler, false);
+//     document.addEventListener("keyup", keyUpHandler, false);
+
+
+
+
+
+//////////////////////////////////////////////////////////
+
+
+var currentSlide = 0;
+
+function updateTicker()
+{
+    // document.getElementById('my-ticker').innerHTML = myTickers;
+}
+
+
+
+function startUp()
+{
+    updateTicker()
+}
+
+function openMenu()
+{
+    console.log("dab")
+    myElement = document.getElementsByClassName("nav-menu")[0];
+    console.log(myElement)
+    if(myElement.style.display === "block")
+    {
+        myElement.style.display = "none"
+    }
+    else
+    {
+        myElement.style.display = "block"
+    }
+    
+}
+
+function displaySlide()
+{
+    
+    imageElement = document.getElementById("image-info")
+    titleElement = document.getElementById("title-info")
+    infoElement = document.getElementById("info")
+
+    imageElement.setAttribute("src", "images/" + site_data.Projects[currentSlide].Image)
+    titleElement.innerHTML = site_data.Projects[currentSlide].Title
+    infoElement.innerHTML = site_data.Projects[currentSlide].Description
+    currentSlide += 1;
+}
+
+function incrementSlide()
+{
+    console.log("Called")
+    if(currentSlide >= (site_data.Projects.length))
+    {
+        currentSlide = 0
+    }
+    displaySlide()
+
+    setTimeout(incrementSlide, 5000);
+    
+} //incrementSlide();
+
+
+
+startUp();
+
+</script>

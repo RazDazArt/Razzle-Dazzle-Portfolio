@@ -1,0 +1,485 @@
+.nav-bar {
+    overflow: hidden;
+    background-color: rgba(70, 70, 70, .2);
+    white-space: nowrap;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("images/shine-33946.png");
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  
+  .nav-bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .hyperlinks {
+    float: left
+  }
+
+  .socials {
+    float: right
+  }
+
+  .nav-bar h1 {
+    float: left;
+    color: #d10000;
+    text-align: left;
+    padding: 0px 40px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-bar marquee {
+    width: 45%;
+    height: 100%;
+    font-size: 24px;
+    margin-top: .6em;
+    margin-bottom: 0em;
+    color:  #00ff2a;
+    background-color: black;
+    white-space: nowrap;
+  }
+
+  .nav-bar a:hover {
+    background-color:rgba(231, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+  }
+
+  .active {
+    background-color: #ddd;
+    color: rgba(37, 0, 80, 0.315);
+  }
+
+  .projects-slide {
+    margin-top: 10px;
+    height: 1000px;
+  }
+
+  .projects-slide-title {
+    width: 35%;
+    height: 50%;
+    float: left;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .projects-slide-title h1{
+    color: #f2f2f2;
+  }
+  .projects-slide-title p{
+    color: #aaaaaa;
+  }
+
+  .projects-slide-pictures {
+    width: 64%;
+    height: 50%;
+    float: right;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+  }
+
+  .proj-image {
+    width: 20%;
+    height: auto;
+    float: left;
+  }
+  .proj-p {
+    color: white;
+    float: right;
+    font-size: 30px;
+    width: 75%;
+  }
+
+  .proj-title {
+    color: white;
+    width: 75%;
+    float: right;
+    font-size: 40px;
+    padding-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  body {
+      background-color: rgb(27, 27, 27);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+
+  .sliding-background{
+    background: url("images/Vector_2677.jpg") repeat-x;
+    height: 100%;
+    width: 100%;
+
+    animation: slide 60s linear infinite;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    
+  }
+
+  @keyframes slide{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+    transform: translate3d(-9054px, 0, 0);
+    }
+  }
+
+  .whoAmI{
+    color: white;
+    font-size: 18px;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 40px;
+  }
+
+  .whoAmI button{
+    margin: 0 auto;
+    display: block;
+    background-color: #c20000; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .caption{
+    color: white;
+    font-size: 12px;
+    width: 40%;
+    margin: 0 auto;
+
+  }
+
+  .Description-Home{
+    color: #d10000;
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: center;
+    
+  }
+
+  .Description-Home p{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .Description-Home button{
+    background-color: #d10000;
+    color: white;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .Description-Home button:hover{
+    background-color: #a51a1a6e;
+    color: white;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+  }
+
+  .nav-dropdown {
+    display: none;
+  }
+
+  .VideoGame{
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .Current{
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .Current h2{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+  }
+
+  .Current p{
+    width: 60%;
+    color: #d10000;
+    font-size: 20px;
+    margin: auto;
+  }
+
+  .Current-Image{
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .Glass-Panel{
+    width: 100%;
+    block-size: fit-content;
+    background-color: rgba(199 199 199 / 20%);
+    margin-top: 10px;
+  }
+
+  .Glass-Panel.Current{
+    width: 49%;
+    float: left;
+    text-align: center;
+  }
+  .Glass-Panel.Current-Image{
+    width: 49%;
+    float:right
+  }
+
+  .Footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(199 199 199 / 0%);
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    float: right;
+  }
+
+  #gameScreen {
+    border: 2px solid blue;
+    margin: 20px;
+  }
+
+  .slide-show {
+    height: auto;
+    padding-bottom: 500px;
+    padding-top: 50px;
+  }
+
+  .BlogHolder {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 50px;
+    width: 1200px;
+    display: block;
+    background-color: rgba(0, 0, 0,.2);
+  }
+
+  .BlogPost {
+    position: relative;
+    width: 1100px;
+    display: block;
+    padding: 20px;;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(180, 180, 180,.2);
+  }
+
+  .BlogImage {
+    float: left;
+    margin-right: 15px;
+    width: 500px;
+    height: 350px;
+  }
+
+  .BlogTitle {
+    float: left;
+    color: red;
+    margin:auto;
+    font-size: 60px;
+    width: 50%;
+  }
+
+  .BlogDescription {
+    padding-top: 10px;
+    float: left;
+    color: white;
+    margin: auto;
+    font-size: 20px;
+    width: 50%;
+  }
+
+  .BlogButton{
+    float: left;
+    color: red;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    width: 25%;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid;
+    border-width: thin;
+    border-color: red;
+    color: red;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+  }
+
+  .BlogButton:hover{
+    background-color: rgba(175, 0, 0, 0.466);
+    border: solid;
+    border-width: thin;
+    border-color: white;
+    color: white;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+  }
+
+  .BlogDate{
+    padding-top: 10px;
+    float: left;
+    color: gray;
+    margin: auto;
+    font-size: 15px;
+    width: 50%;
+  }
+
+  .Research-Content{
+    width: 50%;
+    margin: auto;
+    
+    text-align: center;
+    align-content: center;
+  }
+  .Research-Text{
+    margin-top: 40px;
+    color: white;
+    font-size: 20px;
+  }
+  .Research-Title{
+    color: red;
+    font-size: 80px;
+    margin-top: 40px;
+  }
+  .Research-Details{
+    color: gray;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  .Research-Subtitle{
+    color: gainsboro;
+    font-size: 30px;
+    margin-top: 100px;
+  }
+  .Research-Image{
+    width: 70%;
+    margin-top: 40px;
+  }
+  .Research-Game{
+    width:960px;
+    height:600px;
+    margin-top: 20px;
+    border:0
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 600px) {
+    .nav-bar marquee{
+      display: none;
+    }
+
+    .nav-bar a{
+      display: none;
+    }
+
+    .nav-bar h1 {
+      align-content: center;
+      width: 100%;
+    }
+
+    .nav-dropdown {
+      display: inline-block;
+      position: relative;
+      float: left;
+    }
+
+    .nav-dropdown img {
+      width: 50px;
+      height: 50px;
+      float: left;
+      padding: 5px;
+    }
+
+    .nav-menu a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      border-color: white;
+      border-radius: 10px;
+    }
+    
+    .nav-menu {
+      display: none;
+      background-color: #333;
+      border-radius: 10px;
+      margin-top: 70px;
+      width: 200px;
+      position: absolute;
+      z-index: 3;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .proj-image {
+      width: 200px;
+      align-content: center;
+      height: auto;
+      margin-left: 175px;
+    }
+    .proj-p {
+      color: white;
+      width: 90%;
+      padding-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+      
+    .proj-title {
+      color: white;
+      width: 90%;
+      padding-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+  }

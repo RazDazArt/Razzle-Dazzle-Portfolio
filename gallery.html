@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Umer's Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <!-- Include Startup Script -->
+    <script src="assets/startup_script.js"></script>
+    <!-- Modal Scripts -->
+    <script>
+        // Function to open the modal
+        function openModal(imageSrc, captionText) {
+            var modal = document.getElementById('myModal');
+            var modalImg = document.getElementById("modalImage");
+            var modalCaption = document.getElementById("modalCaption");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalCaption.innerHTML = captionText;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="small-title">
+        <a href="index.html">Umer's Portfolio</a>
+    </div>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <main class="content">
+        <p>The following is a collection of my drawings :)</p>
+        <!-- Gallery Photos Section -->
+        <div class="all-photos">
+        <div class="card" onclick="openModal('gallery/-MASTERED-.png', ``)" style="
+        animation-name: float9;
+        animation-duration: 69.92332567883776s;
+        animation-delay: -69.3866818179957s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/-MASTERED-.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/asuka.png', ``)" style="
+        animation-name: float6;
+        animation-duration: 78.07050492229777s;
+        animation-delay: -13.368472133189655s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/asuka.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/frieren.png', `goated`)" style="
+        animation-name: float10;
+        animation-duration: 85.69622643655623s;
+        animation-delay: -75.17379055375741s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/frieren.png" alt="goated">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;">goated</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/IchigoKurosaki.png', ``)" style="
+        animation-name: float5;
+        animation-duration: 96.77698198398444s;
+        animation-delay: -96.33803313231294s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/IchigoKurosaki.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/nayumakima.png', ``)" style="
+        animation-name: float3;
+        animation-duration: 90.12048990016226s;
+        animation-delay: -49.52124126579884s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/nayumakima.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/notboomcolor.png', ``)" style="
+        animation-name: float10;
+        animation-duration: 78.45282992469575s;
+        animation-delay: -78.05891291935711s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/notboomcolor.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/powerdedlol.png', ``)" style="
+        animation-name: float6;
+        animation-duration: 52.286759466745615s;
+        animation-delay: -35.884574248271235s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/powerdedlol.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/reiayanami.png', ``)" style="
+        animation-name: float3;
+        animation-duration: 68.69026601931387s;
+        animation-delay: -44.30624636118857s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/reiayanami.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/somad.png', ``)" style="
+        animation-name: float7;
+        animation-duration: 88.87350912625024s;
+        animation-delay: -26.671811448809223s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/somad.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/supersaiyajin2goku.png', ``)" style="
+        animation-name: float10;
+        animation-duration: 80.66028374179983s;
+        animation-delay: -41.99975306239182s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/supersaiyajin2goku.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/supersaiyan4aura.png', ``)" style="
+        animation-name: float4;
+        animation-duration: 74.98603830509879s;
+        animation-delay: -10.156908980674558s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/supersaiyan4aura.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/SuperSaiyan5.png', ``)" style="
+        animation-name: float7;
+        animation-duration: 88.64682153921038s;
+        animation-delay: -21.559136830678753s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/SuperSaiyan5.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/SuperSaiyan6.png', ``)" style="
+        animation-name: float1;
+        animation-duration: 90.13361767282595s;
+        animation-delay: -67.17244973872121s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/SuperSaiyan6.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/supersaiyanbluewallpaperver.png', ``)" style="
+        animation-name: float2;
+        animation-duration: 77.89246169997524s;
+        animation-delay: -9.067775849360174s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/supersaiyanbluewallpaperver.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/SuperSaiyanGod.png', ``)" style="
+        animation-name: float6;
+        animation-duration: 56.78615215332235s;
+        animation-delay: -42.97998527130802s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/SuperSaiyanGod.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/thelegendarysupersaiyan3.png', ``)" style="
+        animation-name: float2;
+        animation-duration: 99.10796354123414s;
+        animation-delay: -82.08585667306704s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/thelegendarysupersaiyan3.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/thesupersaiyajin.png', ``)" style="
+        animation-name: float5;
+        animation-duration: 67.48494602025173s;
+        animation-delay: -14.375464644609998s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/thesupersaiyajin.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/UltraInstinct-SIGN-.png', ``)" style="
+        animation-name: float3;
+        animation-duration: 64.15093911466491s;
+        animation-delay: -61.84033870565815s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/UltraInstinct-SIGN-.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/ultrainstinctomen.png', ``)" style="
+        animation-name: float6;
+        animation-duration: 51.61212596661021s;
+        animation-delay: -47.595641578765495s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/ultrainstinctomen.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="openModal('gallery/vegitoreraw.png', ``)" style="
+        animation-name: float7;
+        animation-duration: 89.87099039840716s;
+        animation-delay: -50.01601961851093s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        will-change: transform;
+    ">
+            <img class="card-image" src="gallery/vegitoreraw.png" alt="">
+            <div class="caption">
+                <p class="caption-text" style="font-size: 1rem;"></p>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="caption" id="modalCaption"></div>
+    </div>
+    <footer>
+        <ul class="footer-menu">
+            <li><a href="https://www.instagram.com/razzledazzleart/">Instagram</a></li>
+            <li><a href="https://github.com/RazDazArt">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/umer-mujtaba-71ab06254/">LinkedIn</a></li>
+            <li><a href="mujtaba_resume.pdf">Resume</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fawaz's Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <!-- Include Startup Script -->
+    <script src="assets/startup_script.js"></script>
+    <!-- Modal Scripts -->
+    <script>
+        // Function to open the modal
+        function openModal(imageSrc, captionText) {
+            var modal = document.getElementById('myModal');
+            var modalImg = document.getElementById("modalImage");
+            var modalCaption = document.getElementById("modalCaption");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalCaption.innerHTML = captionText;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="small-title">
+        <a href="index.html">Fawaz's Portfolio</a>
+    </div>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <main class="content">
+        <p>The following is a collection of my drawings :)</p>
+        <!-- Gallery Photos Section -->
+        <div class="all-photos"></div>
+    </main>
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="caption" id="modalCaption"></div>
+    </div>
+    <footer>
+        <ul class="footer-menu">
+            <li><a href="https://www.instagram.com/fawaz.strawberry/">Instagram</a></li>
+            <li><a href="https://github.com/fawaz-strawberry">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/fawaz-mujtaba/">LinkedIn</a></li>
+            <li><a href="mujtaba_resume.pdf">Resume</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

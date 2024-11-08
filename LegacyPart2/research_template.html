@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script language="Javascript" src="stock_data.js"></script>
+    <script language="Javascript" src="projects.js"></script>
+    <script language="Javascript" src="site_data.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="Template\assets\css\main.css"> -->
+    <title>Fawaz's Portfolio</title>
+</head>
+<body>
+    <div class="nav-bar">
+
+        <h1 onclick="location.href='index.html';">Fawaz Mujtaba</h1>
+        <!-- <marquee id="my-ticker" behavior="scroll" direction="left" scrollamount="10"></marquee> -->
+        <div class="hyperlinks" style="width:20%; display: inline;">
+            <a href="projects.html">Projects</a>
+            <a href="mujtaba_resume_tesla_ai.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/fawaz.strawberry/"target="_blank" rel="noopener noreferrer"><img style="width: 20px; height: 20px;" src="images/ig_logo.png"></a>
+            <a href="https://twitter.com/Fawaz_Strawbery/" target="_blank" rel="noopener noreferrer"><img style="width: 20px; height: 20px;" src="images/twitter_logo.png"></a>
+            <a href="https://www.youtube.com/channel/UChlh33Dta72VAta7l3Q9kCA" target="_blank" rel="noopener noreferrer"><img style="width: 30px; height: 20px;" src="images/youtube_logo.png"></a>
+        </div>
+        
+        
+        
+    </div>
+
+    <div id="king" class="Research-Content">
+        <!-- <div class="Research-Title">
+            This is a title
+        </div>
+        <div class="Research-Details">
+            By: Fawaz Mujtaba --- Date: 8/29/2021
+        </div>
+        <div class="Research-Subtitle">
+            This is a subtitle
+        </div>
+        <div class="Research-Text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div> -->
+    </div>
+
+    <div class="Footer">Thansk for Visiting!</div>
+</body>
+</html>
+
+<script>
+
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    
+    console.log(getJSON(params["project"]))
+    siteBuild(getJSON(params["project"]))
+
+    function siteBuild(imported_json)
+    {
+        king = document.getElementById("king")
+        king.classList.add("Research-Content")
+        for(var i = 0; i < imported_json.length; i++)
+        {
+            key = Object.keys(imported_json[i])[0]
+            door = imported_json[i][key]
+            if(key === "title")
+            {
+                room = document.createElement("div")
+                room.classList.add("Research-Title")
+                room.innerHTML = door
+                king.appendChild(room)
+            }
+            if(key === "date")
+            {
+                room = document.createElement("div")
+                room.classList.add("Research-Details")
+                room.innerHTML = door
+                king.appendChild(room)
+            }
+            if(key === "information")
+            {
+                room = document.createElement("div")
+                room.classList.add("Research-Text")
+                room.innerHTML = door
+                king.appendChild(room)
+            }
+            if(key === "subtitle")
+            {
+                room = document.createElement("div")
+                room.classList.add("Research-Subtitle")
+                room.innerHTML = door
+                king.appendChild(room)
+            }
+            if(key === "image")
+            {
+                room = document.createElement("img")
+                room.classList.add("Research-Image")
+                room.src = "images/" + door
+                king.appendChild(room)
+            }
+            if(key === "game")
+            {
+                room = document.createElement("iframe")
+                //<iframe src="https://i.simmer.io/@BubbleMagic45/cider-truck" style="width:960px;height:600px;border:0"></iframe>
+                room.classList.add("Research-Game")
+                room.src = door
+                king.appendChild(room)
+            }
+        }
+
+    }
+
+</script>

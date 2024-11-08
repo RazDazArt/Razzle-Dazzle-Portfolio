@@ -1,0 +1,220 @@
+.nav-bar {
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  
+  .nav-bar a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .nav-bar h1 {
+    float: left;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 0px 40px;
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+  .nav-bar marquee {
+    width: 45%;
+    height: 100%;
+    font-size: 24px;
+    margin-top: .6em;
+    margin-bottom: 0em;
+    color:  #00ff2a;
+    background-color: black;
+    white-space: nowrap;
+  }
+
+  .nav-bar a:hover {
+    background-color: rgb(161, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+
+  .active {
+    background-color: #ddd;
+    color: rgba(37, 0, 80, 0.315);
+  }
+
+  .projects-slide {
+    margin-top: 10px;
+    height: 1000px;
+  }
+
+  .projects-slide-title {
+    width: 35%;
+    height: 50%;
+    float: left;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .projects-slide-title h1{
+    color: #f2f2f2;
+  }
+  .projects-slide-title p{
+    color: #aaaaaa;
+  }
+
+  .projects-slide-pictures {
+    width: 64%;
+    height: 50%;
+    float: right;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+  }
+
+  .proj-image {
+    width: 20%;
+    height: auto;
+    float: left;
+  }
+  .proj-p {
+    color: white;
+    float: right;
+    font-size: 30px;
+    width: 75%;
+  }
+
+  .proj-title {
+    color: white;
+    width: 75%;
+    float: right;
+    font-size: 40px;
+    padding-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  body {
+      background-color: rgb(27, 27, 27);
+      font-family: arial;
+  }
+
+  .whoAmI{
+    color: white;
+    font-size: 18px;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 40px;
+  }
+
+  .whoAmI button{
+    margin: 0 auto;
+    display: block;
+    background-color: #c20000; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .caption{
+    color: white;
+    font-size: 12px;
+    width: 40%;
+    margin: 0 auto;
+
+  }
+
+  .nav-dropdown {
+    display: none;
+  }
+
+  .VideoGame{
+    text-align: center;
+  }
+
+  #gameScreen {
+    border: 2px solid blue;
+    margin: 20px;
+  }
+
+  .slide-show {
+    height: auto;
+    padding-bottom: 500px;
+    padding-top: 50px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .nav-bar marquee{
+      display: none;
+    }
+
+    .nav-bar a{
+      display: none;
+    }
+
+    .nav-bar h1 {
+      align-content: center;
+      width: 100%;
+    }
+
+    .nav-dropdown {
+      display: inline-block;
+      position: relative;
+      float: left;
+    }
+
+    .nav-dropdown img {
+      width: 50px;
+      height: 50px;
+      float: left;
+      padding: 5px;
+    }
+
+    .nav-menu a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      border-color: white;
+      border-radius: 10px;
+    }
+    
+    .nav-menu {
+      display: none;
+      background-color: #333;
+      border-radius: 10px;
+      margin-top: 70px;
+      width: 200px;
+      position: absolute;
+      z-index: 3;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .proj-image {
+      width: 200px;
+      align-content: center;
+      height: auto;
+      margin-left: 175px;
+    }
+    .proj-p {
+      color: white;
+      width: 90%;
+      padding-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+      
+    .proj-title {
+      color: white;
+      width: 90%;
+      padding-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+  }

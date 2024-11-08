@@ -1,0 +1,740 @@
+/* 
+ * Main CSS Stylesheet for Fawaz's Portfolio Website
+ * Updated to overlay captions over image cards with adjustable font sizes,
+ * and to fix issues with card sizing on small screens.
+ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400..700&display=swap');
+
+/* Reset default margins and paddings for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic HTML and Body Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    position: relative; /* For pseudo-element positioning */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.25em; /* 20px / 16px */
+    opacity: 0; /* Initially transparent for transition effect */
+    transition: opacity 0.5s ease-in-out;
+    overflow: auto; /* Allows scrolling */
+}
+
+/* Background Gradient Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.7) 80%);
+    z-index: -1; /* Ensures gradient is behind content */
+}
+
+/* Background Image with Subtle Animation */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/winter.png') repeat;
+    background-size: 2560px 1080px;
+    background-position: center;
+    background-attachment: fixed; /* Keeps background fixed during scroll */
+    opacity: 1; /* Transparency for soft background effect */
+    animation: moveBackground 60s linear infinite; /* Subtle, long animation for floating effect */
+    z-index: -2; /* Ensures background image is behind gradient */
+}
+
+/* Keyframes for Background Animation */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 62.5em 0; } /* 1000px / 16px */
+}
+
+/* Typography Styles */
+h1, h2, h3 {
+    text-align: center;
+    color: rgba(106, 87, 215, 0.8);
+    filter: drop-shadow(0 0 0.45rem rgb(37, 20, 220));
+    font-family: "Helvetica", serif;
+    margin-top: 1rem;
+    transform: scaleY(.9);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+h2, h3 {
+    font-size: 2rem;
+}
+
+/* Main Menu Styles */
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 1.875em; /* 30px / 16px */
+}
+
+.main-menu li {
+    position: relative;
+    margin-left: 1.25em; /* 20px / 16px */
+}
+
+.main-menu li::before {
+    content: ""; /* Necessary for the pseudo-element to be generated */
+    position: absolute;
+    left: -2.5em; /* -40px / 16px */
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg); /* Centers the triangle vertically and rotates it */
+    border-left: 0.9375em solid transparent; /* 15px / 16px */
+    border-right: 0.9375em solid transparent; /* 15px / 16px */
+    border-top: 0.9375em solid red; /* The color and size of the triangle */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.main-menu li:hover::before {
+    opacity: 1; /* Show the triangle on hover */
+}
+
+.main-menu li a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: "Helvetica", sans-serif;
+    display: inline-block;
+}
+
+/* Content Area Styles */
+.content {
+    text-align: center;
+    flex: 1; /* Fill the remaining space */
+    width: 100%; /* Ensure content spans full width */
+    max-width: 75em; /* 1200px / 16px */
+    padding: 1.25em; /* Added padding for content */
+    font-family: "Roboto", sans-serif;
+    font-size: 1.25rem; /* 20px / 16px */
+}
+
+/* Footer Styles */
+footer {
+    border-top: 0.125em solid #6200ff; /* 2px / 16px */
+    padding: 1.25em 0; /* 20px / 16px */
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width */
+}
+
+footer .footer-menu {
+    display: flex;
+    justify-content: space-around; /* Evenly space items without specifying a gap */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-menu li a {
+    text-decoration: none;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    color: #2d38a1;
+    font-weight: bold;
+}
+
+/* Image Styles */
+img {
+    max-height: 31.25em; /* 500px / 16px */
+    max-width: 31.25em; /* 500px / 16px */
+    height: auto;
+    width: auto;
+    margin: 1.25em 0; /* Added margin to separate images from text */
+}
+
+/* Small Title Styles */
+.small-title {
+    position: fixed; /* Keep it fixed at the top left */
+    top: 0.625em; /* 10px / 16px */
+    left: 0.625em; /* 10px / 16px */
+    font-size: 1.125rem; /* 18px / 16px */
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+    color: rgba(33, 49, 229, 0.8);
+    z-index: 1000; /* Ensure it is on top of other elements */
+    background-color: rgba(51, 28, 49, 0.7); /* Semi-transparent background */
+    padding: 0.3125em 0.625em; /* 5px / 16px and 10px / 16px */
+    border-radius: 0.3125em; /* 5px / 16px */
+    box-shadow: 0px 0px 0.3125em rgba(0, 0, 0, 0.3); /* 5px / 16px */
+}
+
+.small-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Paragraph Styles */
+p {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    filter: drop-shadow(0 0 0.75rem crimson);
+    font-weight: 700;
+    font-size: 1.4rem;  /* Base font size */
+    line-height: 1.6;   /* Improve readability */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color:rgb(196, 113, 141);
+}
+
+/* Gallery and Card Container Styles */
+.card-column, .all-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Card Styles */
+.card {
+    position: relative; /* For positioning caption over image */
+    margin: 1.25em; /* 20px / 16px */
+    border-radius: 0.9375em; /* 15px / 16px */
+    overflow: hidden;
+    /* Remove background to prevent white borders */
+    background: none;
+    /* Remove any borders */
+    border: none;
+    box-shadow: 0px 0px 0.625em rgba(0,0,0,0.2); /* 10px / 16px */
+    cursor: pointer;
+    /* Animation properties are set inline */
+    will-change: transform;
+    flex: 1 1 calc(33.333% - 2.5em); /* Adjusted for consistent sizing, margin accounted */
+    max-width: 25em; /* 400px / 16px */
+    min-width: 15.625em; /* 250px / 16px */
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+}
+
+/* Remove default margins and paddings from links */
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Image within the card */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+    display: block;
+    /* Position image absolutely to fill the card */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Ensure the card is a positioned container for absolute positioning */
+.card {
+    position: relative;
+}
+
+/* Card Hover Effect */
+.card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Overlay Caption Styles */
+.card .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Caption height can be adjusted as needed */
+    height: 20%; /* Caption takes up 20% of the card's height */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: rgb(98, 73, 150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.625em; /* 10px / 16px */
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Caption Text Styles */
+.card .caption-text {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem; /* Default font size */
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+}
+
+/* Main Options Styles on Index Page */
+.main-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.5em; /* 40px / 16px */
+    margin-top: 2.5em; /* 40px / 16px */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Option Card Styles */
+.option-card {
+    flex: 1 1 12.5em; /* 200px / 16px */
+    max-width: 18.75em; /* 300px / 16px */
+    height: 7.5em; /* 120px / 16px */
+    background: rgba(36, 24, 54, 0.8);
+    border-radius: 0.9375em; /* 15px / 16px */
+    box-shadow: 0px 0.25em 0.475em rgba(0,0,0,0.1); /* 4px and 6px / 16px */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-0.3125em); /* -5px / 16px */
+    box-shadow: 0px 0.375em 0.5em rgba(0,0,0,0.15); /* 6px and 8px / 16px */
+}
+
+.option-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.option-card h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    transform: scaleY(0.95);
+    text-align: center;
+    margin: 0;
+    color: rgba(161, 145, 211, 0.85);
+    filter: drop-shadow(0 0 0.55rem rgb(220, 20, 133));
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.modal .caption {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 0.625em; /* 10px / 16px */
+}
+
+/* Close Button Styles */
+.close {
+    position: absolute;
+    top: 1.25em; /* 20px / 16px */
+    right: 1.875em; /* 30px / 16px */
+    color: white;
+    font-size: 2.5rem; /* 40px / 16px */
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Medium Devices */
+@media (max-width: 56.25em) { /* 900px / 16px */
+    .card {
+        flex: 1 1 calc(50% - 2.5em); /* Two cards per row */
+        max-width: calc(50% - 2.5em);
+    }
+}
+
+/* Small Devices */
+@media (max-width: 37.5em) { /* 600px / 16px */
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .main-menu li a {
+        font-size: 40px;
+    }
+
+    .content {
+        padding: 0.625em; /* 10px / 16px */
+    }
+
+    /* Updated selector to target images within .content only */
+    .content .content-image,
+    .content img:not(.card-image) {
+        height: auto;
+        max-width: 70%;
+        display: block;
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+
+    .card {
+        flex: 1 1 calc(100% - 2.5em); /* One card per row */
+        max-width: calc(100% - 2.5em);
+        min-width: 15em; /* Set a minimum width */
+    }
+
+    /* Adjust caption height on small screens */
+    .card .caption {
+        height: 25%; /* Increase caption height for readability */
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer .footer-menu {
+        flex-direction: column;
+    }
+
+    footer .footer-menu li {
+        margin-bottom: 0.625em; /* 10px / 16px */
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 30em) { /* 480px / 16px */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .main-menu li a {
+        font-size: 30px;
+    }
+
+    /* Updated selector to target images within .content only */
+    .content .content-image,
+    .content img:not(.card-image) {
+        height: auto;
+        max-width: 70%;
+        display: block;
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+
+    .small-title {
+        font-size: 0.875rem; /* 14px / 16px */
+    }
+
+    .card {
+        flex: 1 1 calc(100% - 2.5em);
+        max-width: calc(100% - 2.5em);
+        min-width: 12.5em; /* Approximately 200px */
+    }
+
+    /* Further adjust caption height */
+    .card .caption {
+        height: 30%; /* Further increase caption height */
+    }
+}
+
+@keyframes float1 {
+    0.0% { transform: translate(0.00px, 15.06px) rotate(0.00deg); }
+    5.0% { transform: translate(4.65px, 14.32px) rotate(0.65deg); }
+    10.0% { transform: translate(8.85px, 12.18px) rotate(1.05deg); }
+    15.0% { transform: translate(12.18px, 8.85px) rotate(1.05deg); }
+    20.0% { transform: translate(14.32px, 4.65px) rotate(0.65deg); }
+    25.0% { transform: translate(15.06px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(14.32px, -4.65px) rotate(-0.65deg); }
+    35.0% { transform: translate(12.18px, -8.85px) rotate(-1.05deg); }
+    40.0% { transform: translate(8.85px, -12.18px) rotate(-1.05deg); }
+    45.0% { transform: translate(4.65px, -14.32px) rotate(-0.65deg); }
+    50.0% { transform: translate(0.00px, -15.06px) rotate(-0.00deg); }
+    55.0% { transform: translate(-4.65px, -14.32px) rotate(0.65deg); }
+    60.0% { transform: translate(-8.85px, -12.18px) rotate(1.05deg); }
+    65.0% { transform: translate(-12.18px, -8.85px) rotate(1.05deg); }
+    70.0% { transform: translate(-14.32px, -4.65px) rotate(0.65deg); }
+    75.0% { transform: translate(-15.06px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-14.32px, 4.65px) rotate(-0.65deg); }
+    85.0% { transform: translate(-12.18px, 8.85px) rotate(-1.05deg); }
+    90.0% { transform: translate(-8.85px, 12.18px) rotate(-1.05deg); }
+    95.0% { transform: translate(-4.65px, 14.32px) rotate(-0.65deg); }
+    100.0% { transform: translate(-0.00px, 15.06px) rotate(-0.00deg); }
+}
+@keyframes float2 {
+    0.0% { transform: translate(0.00px, 13.38px) rotate(0.00deg); }
+    5.0% { transform: translate(4.13px, 12.72px) rotate(1.30deg); }
+    10.0% { transform: translate(7.86px, 10.82px) rotate(2.11deg); }
+    15.0% { transform: translate(10.82px, 7.86px) rotate(2.11deg); }
+    20.0% { transform: translate(12.72px, 4.13px) rotate(1.30deg); }
+    25.0% { transform: translate(13.38px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(12.72px, -4.13px) rotate(-1.30deg); }
+    35.0% { transform: translate(10.82px, -7.86px) rotate(-2.11deg); }
+    40.0% { transform: translate(7.86px, -10.82px) rotate(-2.11deg); }
+    45.0% { transform: translate(4.13px, -12.72px) rotate(-1.30deg); }
+    50.0% { transform: translate(0.00px, -13.38px) rotate(-0.00deg); }
+    55.0% { transform: translate(-4.13px, -12.72px) rotate(1.30deg); }
+    60.0% { transform: translate(-7.86px, -10.82px) rotate(2.11deg); }
+    65.0% { transform: translate(-10.82px, -7.86px) rotate(2.11deg); }
+    70.0% { transform: translate(-12.72px, -4.13px) rotate(1.30deg); }
+    75.0% { transform: translate(-13.38px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-12.72px, 4.13px) rotate(-1.30deg); }
+    85.0% { transform: translate(-10.82px, 7.86px) rotate(-2.11deg); }
+    90.0% { transform: translate(-7.86px, 10.82px) rotate(-2.11deg); }
+    95.0% { transform: translate(-4.13px, 12.72px) rotate(-1.30deg); }
+    100.0% { transform: translate(-0.00px, 13.38px) rotate(-0.00deg); }
+}
+@keyframes float3 {
+    0.0% { transform: translate(0.00px, 17.16px) rotate(0.00deg); }
+    5.0% { transform: translate(5.30px, 16.32px) rotate(0.61deg); }
+    10.0% { transform: translate(10.09px, 13.88px) rotate(0.99deg); }
+    15.0% { transform: translate(13.88px, 10.09px) rotate(0.99deg); }
+    20.0% { transform: translate(16.32px, 5.30px) rotate(0.61deg); }
+    25.0% { transform: translate(17.16px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(16.32px, -5.30px) rotate(-0.61deg); }
+    35.0% { transform: translate(13.88px, -10.09px) rotate(-0.99deg); }
+    40.0% { transform: translate(10.09px, -13.88px) rotate(-0.99deg); }
+    45.0% { transform: translate(5.30px, -16.32px) rotate(-0.61deg); }
+    50.0% { transform: translate(0.00px, -17.16px) rotate(-0.00deg); }
+    55.0% { transform: translate(-5.30px, -16.32px) rotate(0.61deg); }
+    60.0% { transform: translate(-10.09px, -13.88px) rotate(0.99deg); }
+    65.0% { transform: translate(-13.88px, -10.09px) rotate(0.99deg); }
+    70.0% { transform: translate(-16.32px, -5.30px) rotate(0.61deg); }
+    75.0% { transform: translate(-17.16px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-16.32px, 5.30px) rotate(-0.61deg); }
+    85.0% { transform: translate(-13.88px, 10.09px) rotate(-0.99deg); }
+    90.0% { transform: translate(-10.09px, 13.88px) rotate(-0.99deg); }
+    95.0% { transform: translate(-5.30px, 16.32px) rotate(-0.61deg); }
+    100.0% { transform: translate(-0.00px, 17.16px) rotate(-0.00deg); }
+}
+@keyframes float4 {
+    0.0% { transform: translate(0.00px, 19.91px) rotate(0.00deg); }
+    5.0% { transform: translate(6.15px, 18.93px) rotate(0.97deg); }
+    10.0% { transform: translate(11.70px, 16.11px) rotate(1.57deg); }
+    15.0% { transform: translate(16.11px, 11.70px) rotate(1.57deg); }
+    20.0% { transform: translate(18.93px, 6.15px) rotate(0.97deg); }
+    25.0% { transform: translate(19.91px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(18.93px, -6.15px) rotate(-0.97deg); }
+    35.0% { transform: translate(16.11px, -11.70px) rotate(-1.57deg); }
+    40.0% { transform: translate(11.70px, -16.11px) rotate(-1.57deg); }
+    45.0% { transform: translate(6.15px, -18.93px) rotate(-0.97deg); }
+    50.0% { transform: translate(0.00px, -19.91px) rotate(-0.00deg); }
+    55.0% { transform: translate(-6.15px, -18.93px) rotate(0.97deg); }
+    60.0% { transform: translate(-11.70px, -16.11px) rotate(1.57deg); }
+    65.0% { transform: translate(-16.11px, -11.70px) rotate(1.57deg); }
+    70.0% { transform: translate(-18.93px, -6.15px) rotate(0.97deg); }
+    75.0% { transform: translate(-19.91px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-18.93px, 6.15px) rotate(-0.97deg); }
+    85.0% { transform: translate(-16.11px, 11.70px) rotate(-1.57deg); }
+    90.0% { transform: translate(-11.70px, 16.11px) rotate(-1.57deg); }
+    95.0% { transform: translate(-6.15px, 18.93px) rotate(-0.97deg); }
+    100.0% { transform: translate(-0.00px, 19.91px) rotate(-0.00deg); }
+}
+@keyframes float5 {
+    0.0% { transform: translate(0.00px, 11.83px) rotate(0.00deg); }
+    5.0% { transform: translate(3.65px, 11.25px) rotate(1.40deg); }
+    10.0% { transform: translate(6.95px, 9.57px) rotate(2.26deg); }
+    15.0% { transform: translate(9.57px, 6.95px) rotate(2.26deg); }
+    20.0% { transform: translate(11.25px, 3.65px) rotate(1.40deg); }
+    25.0% { transform: translate(11.83px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(11.25px, -3.65px) rotate(-1.40deg); }
+    35.0% { transform: translate(9.57px, -6.95px) rotate(-2.26deg); }
+    40.0% { transform: translate(6.95px, -9.57px) rotate(-2.26deg); }
+    45.0% { transform: translate(3.65px, -11.25px) rotate(-1.40deg); }
+    50.0% { transform: translate(0.00px, -11.83px) rotate(-0.00deg); }
+    55.0% { transform: translate(-3.65px, -11.25px) rotate(1.40deg); }
+    60.0% { transform: translate(-6.95px, -9.57px) rotate(2.26deg); }
+    65.0% { transform: translate(-9.57px, -6.95px) rotate(2.26deg); }
+    70.0% { transform: translate(-11.25px, -3.65px) rotate(1.40deg); }
+    75.0% { transform: translate(-11.83px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-11.25px, 3.65px) rotate(-1.40deg); }
+    85.0% { transform: translate(-9.57px, 6.95px) rotate(-2.26deg); }
+    90.0% { transform: translate(-6.95px, 9.57px) rotate(-2.26deg); }
+    95.0% { transform: translate(-3.65px, 11.25px) rotate(-1.40deg); }
+    100.0% { transform: translate(-0.00px, 11.83px) rotate(-0.00deg); }
+}
+@keyframes float6 {
+    0.0% { transform: translate(0.00px, 15.52px) rotate(0.00deg); }
+    5.0% { transform: translate(4.80px, 14.76px) rotate(0.94deg); }
+    10.0% { transform: translate(9.12px, 12.56px) rotate(1.52deg); }
+    15.0% { transform: translate(12.56px, 9.12px) rotate(1.52deg); }
+    20.0% { transform: translate(14.76px, 4.80px) rotate(0.94deg); }
+    25.0% { transform: translate(15.52px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(14.76px, -4.80px) rotate(-0.94deg); }
+    35.0% { transform: translate(12.56px, -9.12px) rotate(-1.52deg); }
+    40.0% { transform: translate(9.12px, -12.56px) rotate(-1.52deg); }
+    45.0% { transform: translate(4.80px, -14.76px) rotate(-0.94deg); }
+    50.0% { transform: translate(0.00px, -15.52px) rotate(-0.00deg); }
+    55.0% { transform: translate(-4.80px, -14.76px) rotate(0.94deg); }
+    60.0% { transform: translate(-9.12px, -12.56px) rotate(1.52deg); }
+    65.0% { transform: translate(-12.56px, -9.12px) rotate(1.52deg); }
+    70.0% { transform: translate(-14.76px, -4.80px) rotate(0.94deg); }
+    75.0% { transform: translate(-15.52px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-14.76px, 4.80px) rotate(-0.94deg); }
+    85.0% { transform: translate(-12.56px, 9.12px) rotate(-1.52deg); }
+    90.0% { transform: translate(-9.12px, 12.56px) rotate(-1.52deg); }
+    95.0% { transform: translate(-4.80px, 14.76px) rotate(-0.94deg); }
+    100.0% { transform: translate(-0.00px, 15.52px) rotate(-0.00deg); }
+}
+@keyframes float7 {
+    0.0% { transform: translate(0.00px, 17.90px) rotate(0.00deg); }
+    5.0% { transform: translate(5.53px, 17.02px) rotate(1.09deg); }
+    10.0% { transform: translate(10.52px, 14.48px) rotate(1.77deg); }
+    15.0% { transform: translate(14.48px, 10.52px) rotate(1.77deg); }
+    20.0% { transform: translate(17.02px, 5.53px) rotate(1.09deg); }
+    25.0% { transform: translate(17.90px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(17.02px, -5.53px) rotate(-1.09deg); }
+    35.0% { transform: translate(14.48px, -10.52px) rotate(-1.77deg); }
+    40.0% { transform: translate(10.52px, -14.48px) rotate(-1.77deg); }
+    45.0% { transform: translate(5.53px, -17.02px) rotate(-1.09deg); }
+    50.0% { transform: translate(0.00px, -17.90px) rotate(-0.00deg); }
+    55.0% { transform: translate(-5.53px, -17.02px) rotate(1.09deg); }
+    60.0% { transform: translate(-10.52px, -14.48px) rotate(1.77deg); }
+    65.0% { transform: translate(-14.48px, -10.52px) rotate(1.77deg); }
+    70.0% { transform: translate(-17.02px, -5.53px) rotate(1.09deg); }
+    75.0% { transform: translate(-17.90px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-17.02px, 5.53px) rotate(-1.09deg); }
+    85.0% { transform: translate(-14.48px, 10.52px) rotate(-1.77deg); }
+    90.0% { transform: translate(-10.52px, 14.48px) rotate(-1.77deg); }
+    95.0% { transform: translate(-5.53px, 17.02px) rotate(-1.09deg); }
+    100.0% { transform: translate(-0.00px, 17.90px) rotate(-0.00deg); }
+}
+@keyframes float8 {
+    0.0% { transform: translate(0.00px, 18.31px) rotate(0.00deg); }
+    5.0% { transform: translate(5.66px, 17.41px) rotate(1.52deg); }
+    10.0% { transform: translate(10.76px, 14.81px) rotate(2.46deg); }
+    15.0% { transform: translate(14.81px, 10.76px) rotate(2.46deg); }
+    20.0% { transform: translate(17.41px, 5.66px) rotate(1.52deg); }
+    25.0% { transform: translate(18.31px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(17.41px, -5.66px) rotate(-1.52deg); }
+    35.0% { transform: translate(14.81px, -10.76px) rotate(-2.46deg); }
+    40.0% { transform: translate(10.76px, -14.81px) rotate(-2.46deg); }
+    45.0% { transform: translate(5.66px, -17.41px) rotate(-1.52deg); }
+    50.0% { transform: translate(0.00px, -18.31px) rotate(-0.00deg); }
+    55.0% { transform: translate(-5.66px, -17.41px) rotate(1.52deg); }
+    60.0% { transform: translate(-10.76px, -14.81px) rotate(2.46deg); }
+    65.0% { transform: translate(-14.81px, -10.76px) rotate(2.46deg); }
+    70.0% { transform: translate(-17.41px, -5.66px) rotate(1.52deg); }
+    75.0% { transform: translate(-18.31px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-17.41px, 5.66px) rotate(-1.52deg); }
+    85.0% { transform: translate(-14.81px, 10.76px) rotate(-2.46deg); }
+    90.0% { transform: translate(-10.76px, 14.81px) rotate(-2.46deg); }
+    95.0% { transform: translate(-5.66px, 17.41px) rotate(-1.52deg); }
+    100.0% { transform: translate(-0.00px, 18.31px) rotate(-0.00deg); }
+}
+@keyframes float9 {
+    0.0% { transform: translate(0.00px, 18.48px) rotate(0.00deg); }
+    5.0% { transform: translate(5.71px, 17.57px) rotate(1.50deg); }
+    10.0% { transform: translate(10.86px, 14.95px) rotate(2.43deg); }
+    15.0% { transform: translate(14.95px, 10.86px) rotate(2.43deg); }
+    20.0% { transform: translate(17.57px, 5.71px) rotate(1.50deg); }
+    25.0% { transform: translate(18.48px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(17.57px, -5.71px) rotate(-1.50deg); }
+    35.0% { transform: translate(14.95px, -10.86px) rotate(-2.43deg); }
+    40.0% { transform: translate(10.86px, -14.95px) rotate(-2.43deg); }
+    45.0% { transform: translate(5.71px, -17.57px) rotate(-1.50deg); }
+    50.0% { transform: translate(0.00px, -18.48px) rotate(-0.00deg); }
+    55.0% { transform: translate(-5.71px, -17.57px) rotate(1.50deg); }
+    60.0% { transform: translate(-10.86px, -14.95px) rotate(2.43deg); }
+    65.0% { transform: translate(-14.95px, -10.86px) rotate(2.43deg); }
+    70.0% { transform: translate(-17.57px, -5.71px) rotate(1.50deg); }
+    75.0% { transform: translate(-18.48px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-17.57px, 5.71px) rotate(-1.50deg); }
+    85.0% { transform: translate(-14.95px, 10.86px) rotate(-2.43deg); }
+    90.0% { transform: translate(-10.86px, 14.95px) rotate(-2.43deg); }
+    95.0% { transform: translate(-5.71px, 17.57px) rotate(-1.50deg); }
+    100.0% { transform: translate(-0.00px, 18.48px) rotate(-0.00deg); }
+}
+@keyframes float10 {
+    0.0% { transform: translate(0.00px, 11.39px) rotate(0.00deg); }
+    5.0% { transform: translate(3.52px, 10.83px) rotate(1.05deg); }
+    10.0% { transform: translate(6.69px, 9.21px) rotate(1.70deg); }
+    15.0% { transform: translate(9.21px, 6.69px) rotate(1.70deg); }
+    20.0% { transform: translate(10.83px, 3.52px) rotate(1.05deg); }
+    25.0% { transform: translate(11.39px, 0.00px) rotate(0.00deg); }
+    30.0% { transform: translate(10.83px, -3.52px) rotate(-1.05deg); }
+    35.0% { transform: translate(9.21px, -6.69px) rotate(-1.70deg); }
+    40.0% { transform: translate(6.69px, -9.21px) rotate(-1.70deg); }
+    45.0% { transform: translate(3.52px, -10.83px) rotate(-1.05deg); }
+    50.0% { transform: translate(0.00px, -11.39px) rotate(-0.00deg); }
+    55.0% { transform: translate(-3.52px, -10.83px) rotate(1.05deg); }
+    60.0% { transform: translate(-6.69px, -9.21px) rotate(1.70deg); }
+    65.0% { transform: translate(-9.21px, -6.69px) rotate(1.70deg); }
+    70.0% { transform: translate(-10.83px, -3.52px) rotate(1.05deg); }
+    75.0% { transform: translate(-11.39px, -0.00px) rotate(0.00deg); }
+    80.0% { transform: translate(-10.83px, 3.52px) rotate(-1.05deg); }
+    85.0% { transform: translate(-9.21px, 6.69px) rotate(-1.70deg); }
+    90.0% { transform: translate(-6.69px, 9.21px) rotate(-1.70deg); }
+    95.0% { transform: translate(-3.52px, 10.83px) rotate(-1.05deg); }
+    100.0% { transform: translate(-0.00px, 11.39px) rotate(-0.00deg); }
+}
